@@ -14,7 +14,11 @@ class ManualInstances(RetrieveInstanceIPs):
     def getIps(self,service,ips,port):
         instances=[]
         for ip in ips.split(','):
-            instances.append(Instance(name=service,ip=ip,port=port))
+            if ip.endswith('.10'):
+                instances.append(Instance(name=service,ip=ip,port=16000))
+                instances.append(Instance(name=service,ip=ip,port=2181))
+            else:
+                instances.append(Instance(name=service,ip=ip,port=port))
         return instances
 
 class AWSInstances(RetrieveInstanceIPs):

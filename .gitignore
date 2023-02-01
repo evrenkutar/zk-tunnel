@@ -1,5 +1,5 @@
 build/*
 dist/*
 __pycache__/
-kafkatunnel.egg-info/*
+zktunnel.egg-info/*
 *.pyc
